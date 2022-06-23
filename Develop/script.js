@@ -1,7 +1,21 @@
 // Assignment code here
 
+// Variables containing prompt statements
+function generatedPassword(lengthPassword) {
+  var character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()?><";
+  var characterSize = character.length;
+  var genPassword = '';
+  for (var i = 0; i < lengthPassword; i++) {
+    genPassword = genPassword + characterSize.charAt(Math.floor(Math.random() * characterSize));
+  }
+  return genPassword;
+}
+generatedPassword();
+
+
+
+
 var length = prompt("How long will your password be?");
-console.log(length);
   if (length < 8 || length > 128) {
     alert ("Password must be between 8 and 128 characters.");
   };
@@ -16,16 +30,16 @@ var characters = prompt("Lower case or Upper case characters?");
     window.alert("Neither option selected.")
   };
 
-var specCharacters = prompt("Include special characters?");
+var specCharacters = prompt("Include special characters, yes or no?");
   if (specCharacters === "yes" || specCharacters === "YES") {
     window.alert("Special characters will be used.")
   }
   else if (specCharacters === "no" || specCharacters === "NO") {
     window.alert("Special characters won't be used.")
-  }
+  };
 
 
-
+  
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
