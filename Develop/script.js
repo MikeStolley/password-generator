@@ -1,32 +1,51 @@
 // Assignment code here
+var totalPassword = ""
+var lower = "abcdefghijklmnopqrstuvwxyz"
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var number = "0123456789"
+var special = "!@#$%^&*()?!"
 
-var upperCase;
-var lowerCase;
-var characters;
-var specialCh;
 
-var passwordArray = [
-  {
-    upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  },
-  {
-    lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  },
-  {
-    number = [0,1,2,3,4,5,6,7,8,9]
-  },
-  {
-    special = ["!","@","#","$","%","^","&","*","(",")","*"]
+function generatePassword() {
+
+var length = prompt("How long is your password?")
+console.log(length);
+  if (length < 8 || length > 128) {
+    alert("password must be between 8 and 128 characters.")
+    return generatePassword();
+  };
+
+var textUpperCase = window.confirm("Upper case letters in your password?")
+  if (textUpperCase) {
+    totalPassword += upper;
+  };
+
+var textLowerCase = window.confirm("Lower case letters in your password?")
+  if (textLowerCase) {
+    totalPassword += lower;
+  };
+
+var textNumbers = window.confirm("Numbers in your password?")
+  if (textNumbers) {
+    totalPassword += number;
+  };
+
+var textSpecCh = window.confirm("Special Characters in your password?")
+  if (textSpecCh) {
+    totalPassword += special;
+  };
+
+  var finalPassword = ''
+
+  for (var i = 0; i <= length; i++) {
+    finalPassword += totalPassword.charAt(Math.floor(Math.random() * totalPassword.length));
   }
-];
 
 
+return finalPassword;
 
+};
 
-
-
-
-  
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
