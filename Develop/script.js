@@ -1,42 +1,29 @@
 // Assignment code here
 
-// Variables containing prompt statements
-function generatedPassword(lengthPassword) {
-  var character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()?><";
-  var characterSize = character.length;
-  var genPassword = '';
-  for (var i = 0; i < lengthPassword; i++) {
-    genPassword = genPassword + characterSize.charAt(Math.floor(Math.random() * characterSize));
+var upperCase;
+var lowerCase;
+var characters;
+var specialCh;
+
+var passwordArray = [
+  {
+    upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  },
+  {
+    lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  },
+  {
+    number = [0,1,2,3,4,5,6,7,8,9]
+  },
+  {
+    special = ["!","@","#","$","%","^","&","*","(",")","*"]
   }
-  return genPassword;
-}
-generatedPassword();
+];
 
 
 
 
-var length = prompt("How long will your password be?");
-  if (length < 8 || length > 128) {
-    alert ("Password must be between 8 and 128 characters.");
-  };
 
-var characters = prompt("Lower case or Upper case characters?");
-  if (characters === "lower" || characters === "LOWER") {
-    window.alert("Lower characters selected.")
-  }
-  else if (characters === "upper" || characters === "UPPER") {
-    window.alert("Upper characters selected.")
-  } else {
-    window.alert("Neither option selected.")
-  };
-
-var specCharacters = prompt("Include special characters, yes or no?");
-  if (specCharacters === "yes" || specCharacters === "YES") {
-    window.alert("Special characters will be used.")
-  }
-  else if (specCharacters === "no" || specCharacters === "NO") {
-    window.alert("Special characters won't be used.")
-  };
 
 
   
