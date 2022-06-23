@@ -8,8 +8,8 @@ var special = "!@#$%^&*()?!"
 var finalPassword = ""
 var totalPassword = ""
 
-
 function generatePassword() {
+
 
 //If statement discussed in class, returns to the beginning if no value is given
 var length = prompt("How long is your password?")
@@ -40,7 +40,7 @@ var textSpecCh = window.confirm("Special Characters in your password?")
     totalPassword += special;
   };
 
-//For statement using charAt, in order to hold a character of data for the total password that is generated above.
+//For statement using charAt to get the right index of my totalPassword string
   for (var i = 0; i <= length; i++) {
     finalPassword += totalPassword.charAt(Math.floor(Math.random() * totalPassword.length));
   }
